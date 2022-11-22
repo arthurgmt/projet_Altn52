@@ -1,5 +1,3 @@
-import java.security.spec.EllipticCurve;
-
 public class Elipse extends Forme implements Transformation {
 
     int width;

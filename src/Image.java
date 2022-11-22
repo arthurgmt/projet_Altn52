@@ -1,4 +1,3 @@
-import java.text.Normalizer.Form;
 import java.util.ArrayList;
 
 public class Image implements Transformation{
