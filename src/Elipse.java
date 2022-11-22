@@ -11,7 +11,15 @@ public class Elipse extends Forme implements Transformation {
         this.height=height;
     }
 
+    public int getWidth(){
+        return this.width;
+    }
 
+    public int getHeight(){
+        return this.height;
+    }
+
+    
     @Override
     public void homothetie(){
         // TODO Auto-generated method stub

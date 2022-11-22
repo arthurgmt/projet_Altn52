@@ -7,7 +7,6 @@ public class Trait extends Forme implements Transformation {
         this.addPoint(x2, y2);
     }
 
-
     @Override
     public void homothetie(){
         // TODO Auto-generated method stub

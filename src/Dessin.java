@@ -8,6 +8,16 @@ public class Dessin implements Transformation{
         this.images = new ArrayList<Image>();
     }
 
+    public void addImage(Image i){
+        this.images.add(i);
+    }
+
+
+    //getter
+    public ArrayList<Image> getImages(){
+        return this.images;
+    }
+
     @Override
     public void homothetie() {
         // TODO Auto-generated method stub

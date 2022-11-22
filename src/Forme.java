@@ -13,4 +13,8 @@ public class Forme {
         this.points.add(p);
     }
 
+    public ArrayList<Point> getPoints(){
+        return this.points;
+    }
+
 }

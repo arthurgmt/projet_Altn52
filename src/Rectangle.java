@@ -11,6 +11,14 @@ public class Rectangle extends Forme implements Transformation {
         this.height=height;
     }
 
+    public int getWidth(){
+        return this.width;
+    }
+
+    public int getHeight(){
+        return this.height;
+    }
+
 
     @Override
     public void homothetie(){

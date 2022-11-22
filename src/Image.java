@@ -13,6 +13,10 @@ public class Image implements Transformation{
         this.formes.add(f);
     }
 
+    //getter
+    public ArrayList<Forme> getFormes(){
+        return this.formes;
+    }
 
     @Override
     public void homothetie() {
