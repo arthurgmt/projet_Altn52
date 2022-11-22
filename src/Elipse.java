@@ -1,3 +1,5 @@
+import java.awt.Graphics;
+
 public class Elipse extends Forme implements Transformation {
 
     int width;
@@ -11,6 +13,7 @@ public class Elipse extends Forme implements Transformation {
         this.height=height;
     }
 
+    // getter
     public int getWidth(){
         return this.width;
     }
@@ -19,6 +22,11 @@ public class Elipse extends Forme implements Transformation {
         return this.height;
     }
 
+    //dessin
+    public void paint(Graphics g){
+        Point p = this.getPoints().get(0);
+        g.drawOval(p.x, p.y, this.width, this.height);  
+    }
     
     @Override
     public void homothetie(){

@@ -1,11 +1,14 @@
-import java.util.TreeSet;
+import java.util.ArrayList;
 
 public class Forme { 
 
-    TreeSet<Point> points; 
+    ArrayList<Point> points; 
+    float aire = 0;
+    float perimetre = 0;
+
 
     public Forme(){
-        points = new TreeSet<Point>();  
+        points = new ArrayList<Point>();  
     }
     
     public void addPoint(int x, int y){
@@ -13,8 +16,17 @@ public class Forme {
         this.points.add(p);
     }
 
-    public TreeSet<Point> getPoints(){
+    // getter
+    public ArrayList<Point> getPoints(){
         return this.points;
     }
 
+    // setter
+    public void setAire(float aire){
+        this.aire = aire;
+    }
+
+    public void setPerimetre(float perimetre){
+        this.perimetre = perimetre;
+    }
 }
