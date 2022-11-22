@@ -1,12 +1,11 @@
-import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class Image implements Transformation{
     
-    ArrayList<Forme> formes;
-
+    TreeSet<Forme> formes;
 
     public Image(){
-        this.formes = new ArrayList<Forme>();
+        this.formes = new TreeSet<Forme>();
     }
 
     public void addForme(Forme f){
@@ -14,7 +13,7 @@ public class Image implements Transformation{
     }
 
     //getter
-    public ArrayList<Forme> getFormes(){
+    public TreeSet<Forme> getFormes(){
         return this.formes;
     }
 

@@ -1,11 +1,11 @@
-import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class Dessin implements Transformation{
 
-    ArrayList<Image> images;
+    TreeSet<Image> images;
 
     public Dessin(){
-        this.images = new ArrayList<Image>();
+        this.images = new TreeSet<Image>();
     }
 
     public void addImage(Image i){
@@ -14,7 +14,7 @@ public class Dessin implements Transformation{
 
 
     //getter
-    public ArrayList<Image> getImages(){
+    public TreeSet<Image> getImages(){
         return this.images;
     }
 

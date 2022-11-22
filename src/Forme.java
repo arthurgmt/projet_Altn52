@@ -1,11 +1,11 @@
-import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class Forme { 
 
-    ArrayList<Point> points; 
+    TreeSet<Point> points; 
 
     public Forme(){
-        points = new ArrayList<Point>();  
+        points = new TreeSet<Point>();  
     }
     
     public void addPoint(int x, int y){
@@ -13,7 +13,7 @@ public class Forme {
         this.points.add(p);
     }
 
-    public ArrayList<Point> getPoints(){
+    public TreeSet<Point> getPoints(){
         return this.points;
     }
 
