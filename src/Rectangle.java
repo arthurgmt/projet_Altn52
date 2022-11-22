@@ -1,15 +1,20 @@
-import java.util.ArrayList;
+public class Rectangle extends Forme implements Transformation {
 
-public class Dessin implements Transformation{
+    int width;
+    int height;
 
-    ArrayList<Image> images;
-
-
-    
-    @Override
-    public void homothetie() {
-        // TODO Auto-generated method stub
+    public Rectangle(int x, int y, int width, int height){
         
+        super();
+        this.addPoint(x, y);
+        this.width=width;
+        this.height=height;
+    }
+
+
+    @Override
+    public void homothetie(){
+        // TODO Auto-generated method stub
     }
 
     @Override
@@ -29,5 +34,6 @@ public class Dessin implements Transformation{
         // TODO Auto-generated method stub
         
     }
-    
+
+
 }
