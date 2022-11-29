@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.awt.Graphics2D;
 
-public class Forme { 
+public class Forme implements Transformation{ 
 
     ArrayList<Point> points; 
     float aire = 0;
@@ -38,5 +38,29 @@ public class Forme {
 
     public void setPerimetre(float perimetre){
         this.perimetre = perimetre;
+    }
+
+    @Override
+    public void homothetie() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void translation(int x, int y) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void symetrieaxiale(int x1, int y1, int x2, int y2) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void symetriecentrale(int x, int y) {
+        // TODO Auto-generated method stub
+        
     }
 }

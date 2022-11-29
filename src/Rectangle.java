@@ -35,21 +35,28 @@ public class Rectangle extends Forme implements Transformation {
     }
 
     @Override
-    public void translation() {
+    public void translation(int x, int y) {
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    public void symetrieaxiale() {
+    public void symetrieaxiale(int x1, int y1, int x2, int y2) {
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    public void symetriecentrale() {
-        // TODO Auto-generated method stub
+    public void symetriecentrale(int x, int y) {
         
+        Point p = this.points.get(0);
+
+        int dx = x - (p.x + width/2);
+        int dy = y - (p.y + height/2); 
+
+        p.x += 2*dx;
+        p.y += 2*dy;
+
     }
 
 
