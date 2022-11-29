@@ -1,4 +1,6 @@
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+
 
 public class Elipse extends Forme implements Transformation {
 
@@ -23,7 +25,8 @@ public class Elipse extends Forme implements Transformation {
     }
 
     //dessin
-    public void paint(Graphics g){
+    @Override
+    public void paint(Graphics2D g){
         Point p = this.getPoints().get(0);
         g.drawOval(p.x, p.y, this.width, this.height);  
     }

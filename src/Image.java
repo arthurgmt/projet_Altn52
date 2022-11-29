@@ -1,11 +1,12 @@
+import java.util.ArrayList;
 import java.util.TreeSet;
 
 public class Image implements Transformation{
     
-    TreeSet<Forme> formes;
+    ArrayList<Forme> formes;
 
     public Image(){
-        this.formes = new TreeSet<Forme>();
+        this.formes = new ArrayList<Forme>();
     }
 
     public void addForme(Forme f){
@@ -13,9 +14,10 @@ public class Image implements Transformation{
     }
 
     //getter
-    public TreeSet<Forme> getFormes(){
+    public ArrayList<Forme> getFormes(){
         return this.formes;
     }
+    
 
     @Override
     public void homothetie() {

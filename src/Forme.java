@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.awt.Graphics2D;
 
 public class Forme { 
 
@@ -8,12 +9,23 @@ public class Forme {
 
 
     public Forme(){
-        points = new ArrayList<Point>();  
+        
+
     }
     
     public void addPoint(int x, int y){
         Point p = new Point(x, y);
-        this.points.add(p);
+        try {
+            this.points.add(p);
+        }catch (NullPointerException e){
+            this.points = new ArrayList<Point>();
+            this.points.add(p);
+        }
+        
+    }
+
+    public void paint(Graphics2D g){
+        
     }
 
     // getter
