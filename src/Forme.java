@@ -9,8 +9,7 @@ public class Forme {
 
 
     public Forme(){
-        
-
+        this.points = new ArrayList<Point>();
     }
     
     public void addPoint(int x, int y){
@@ -20,8 +19,7 @@ public class Forme {
         }catch (NullPointerException e){
             this.points = new ArrayList<Point>();
             this.points.add(p);
-        }
-        
+        }   
     }
 
     public void paint(Graphics2D g){
