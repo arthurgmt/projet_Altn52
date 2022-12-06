@@ -32,14 +32,17 @@ public class Image implements Transformation{
     }
 
     @Override
-    public void symetrieaxiale() {
-        // TODO Auto-generated method stub
-        
+    public void symetrieaxiale(int x1, int y1, int x2, int y2) {
+        for (Forme f: formes){
+            f.symetrieaxiale(x1, y1, x2, y2);
+        }
     }
 
     @Override
-    public void symetriecentrale() {
-        // TODO Auto-generated method stub
+    public void symetriecentrale(int x, int y) {
+        for (Forme f: formes){
+            f.symetriecentrale(x, y);
+        }
         
     }
 

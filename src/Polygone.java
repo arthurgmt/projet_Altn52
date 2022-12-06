@@ -41,19 +41,21 @@ public class Polygone extends Forme implements Transformation {
     }
 
     @Override
-    public void translation() {
+    public void translation(int x, int y) {
+        for (Point p : this.points){
+            p.x += x;
+            p.y += y;
+        }
+    }
+
+    @Override
+    public void symetrieaxiale(int x1, int y1, int x2, int y2) {
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    public void symetrieaxiale() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void symetriecentrale() {
+    public void symetriecentrale(int x, int y) {
         // TODO Auto-generated method stub
         
     }
