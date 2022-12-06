@@ -33,8 +33,15 @@ public class Trait extends Forme implements Transformation {
     }
 
     @Override
-    public void symetrieaxiale(int x1, int y1, int x2, int y2) {
-        // TODO Auto-generated method stub
+    public void symetrieaxiale() {
+        for (Point p : this.points){
+
+            int distX = x-p.x; 
+            int distY = y-p.y; 
+
+            p.x += 2*distX;
+            p.y += 2*distY;
+        }
     }
 
     @Override

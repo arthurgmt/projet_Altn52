@@ -53,7 +53,7 @@ public class Forme implements Transformation{
     }
 
     @Override
-    public void symetrieaxiale(int x1, int y1, int x2, int y2) {
+    public void symetrieaxiale() {
         // TODO Auto-generated method stub
         
     }

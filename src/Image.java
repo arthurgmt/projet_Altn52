@@ -26,15 +26,15 @@ public class Image implements Transformation{
     }
 
     @Override
-    public void translation() {
+    public void translation(int x, int y) {
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    public void symetrieaxiale(int x1, int y1, int x2, int y2) {
+    public void symetrieaxiale() {
         for (Forme f: formes){
-            f.symetrieaxiale(x1, y1, x2, y2);
+            f.symetrieaxiale();
         }
     }
 

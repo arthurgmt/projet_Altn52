@@ -16,10 +16,11 @@ public class App{
     Forme r = new Rectangle(0, 0, 100, 80);
 
     Forme p = new Polygone();
-    p.addPoint(100,0);
-    p.addPoint(100,200);
-    p.addPoint(80,250);
-    p.addPoint(200,150);
+    p.addPoint(10,10);
+    p.addPoint(210,10);
+    p.addPoint(210,210);
+    p.addPoint(10,210);
+
 
     // add formes to image
     i.addForme(e);
@@ -35,7 +36,7 @@ public class App{
     pan.addImage(i);
 
     // view
-    Frame fen = new Frame(500,520);
+    Frame fen = new Frame(600,600);
 
 		fen.add(pan);
 		fen.repaint();
