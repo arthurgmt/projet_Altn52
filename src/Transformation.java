@@ -8,4 +8,6 @@ public interface Transformation {
 
     void symetriecentrale(int x, int y);
 
+    void rotation();
+    
 }

@@ -24,13 +24,15 @@ public class App{
 
     // add formes to image
     i.addForme(e);
-    // i.addForme(t);
+    i.addForme(t);
     i.addForme(c);
     // i.addForme(r);
-    i.addForme(p);
+    // i.addForme(p);
 
     // modif 
-    c.symetriecentrale(250, 250);
+    // c.symetriecentrale(250, 250);
+    // c.symetrieaxiale();
+    t.symetrieaxiale();
 
     // add image 
     pan.addImage(i);

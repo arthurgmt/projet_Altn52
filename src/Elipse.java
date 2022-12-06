@@ -38,14 +38,17 @@ public class Elipse extends Forme implements Transformation {
 
     @Override
     public void translation(int x, int y) {
-        // TODO Auto-generated method stub
-        
+        Point p = this.points.get(0);
+
+        p.x += x;
+        p.y += y;
     }
 
     @Override
-    public void symetrieaxiale(int x1, int y1, int x2, int y2) {
-        // TODO Auto-generated method stub
-        
+    public void symetrieaxiale() {
+        Point p = this.points.get(0);
+
+        p.x = 500 - p.x - this.width;
     }
 
     @Override

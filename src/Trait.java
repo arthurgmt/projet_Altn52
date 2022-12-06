@@ -9,6 +9,18 @@ public class Trait extends Forme implements Transformation {
         this.addPoint(x2, y2);
     }
 
+    public double perimetre() {
+        Point p1 = this.getPoints().get(0);
+        Point p2 = this.getPoints().get(1);
+
+        int x1 = p1.x;
+        int y1 = p1.y;
+        int x2 = p2.x;
+        int y2 = p2.y;
+
+        return Math.sqrt((y2-y1)*(y2-y1)+(x2-x1)*(x2-x1));
+    }
+
     //dessin
     @Override
     public void paint(Graphics2D g){
@@ -36,11 +48,7 @@ public class Trait extends Forme implements Transformation {
     public void symetrieaxiale() {
         for (Point p : this.points){
 
-            int distX = x-p.x; 
-            int distY = y-p.y; 
-
-            p.x += 2*distX;
-            p.y += 2*distY;
+            p.x = 500 - p.x;
         }
     }
 
