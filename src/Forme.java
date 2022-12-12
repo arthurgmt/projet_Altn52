@@ -4,8 +4,8 @@ import java.awt.Graphics2D;
 public class Forme implements Transformation{ 
 
     ArrayList<Point> points; 
-    float aire = 0;
-    float perimetre = 0;
+    double aire = 0;
+    double perimetre = 0;
 
 
     public Forme(){

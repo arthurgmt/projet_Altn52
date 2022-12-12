@@ -13,6 +13,16 @@ public class Elipse extends Forme implements Transformation {
         this.addPoint(x, y);
         this.width=width;
         this.height=height;
+        updateAire();
+        updatePerimetre();
+    }
+
+    public void updateAire(){
+        this.aire = Math.PI * (this.width/2) * (this.height/2); 
+    }
+
+    public void updatePerimetre(){
+        this.perimetre = 2*Math.PI*Math.sqrt((width*width+height*height)/2);
     }
 
     // getter
