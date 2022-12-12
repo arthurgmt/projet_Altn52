@@ -11,8 +11,8 @@ public class Rectangle extends Forme implements Transformation {
         this.addPoint(x, y);
         this.width=width;
         this.height=height;
-        updateAire();
-        updatePerimetre();
+        this.updateAire();
+        this.updatePerimetre();
     }
 
     public void updateAire(){

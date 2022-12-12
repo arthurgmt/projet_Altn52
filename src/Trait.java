@@ -7,9 +7,10 @@ public class Trait extends Forme implements Transformation {
         super();
         this.addPoint(x1, y1);
         this.addPoint(x2, y2);
+        this.updatePerimetre();
     }
 
-    public double perimetre() {
+    public void updatePerimetre() {
         Point p1 = this.getPoints().get(0);
         Point p2 = this.getPoints().get(1);
 
@@ -18,7 +19,7 @@ public class Trait extends Forme implements Transformation {
         int x2 = p2.x;
         int y2 = p2.y;
 
-        return Math.sqrt((y2-y1)*(y2-y1)+(x2-x1)*(x2-x1));
+        this.perimetre = Math.sqrt((y2-y1)*(y2-y1)+(x2-x1)*(x2-x1));
     }
 
     //dessin
