@@ -30,8 +30,13 @@ public class Rectangle extends Forme implements Transformation {
     }
 
     @Override
-    public void homothetie(){
-        // TODO Auto-generated method stub
+    public void homothetie(float x){
+    
+        Point p = this.points.get(0);
+
+        p.x *= x;
+        p.y *= x;
+
     }
 
     @Override

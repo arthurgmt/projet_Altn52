@@ -30,7 +30,7 @@ public class App{
     i.addForme(p);
 
     // modif 
-    c.symetriecentrale(250, 250);
+    c.homothetie(2);
 
     // add image 
     pan.addImage(i);
