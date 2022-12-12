@@ -57,7 +57,7 @@ public class Dessin extends JPanel implements Transformation{
     }
 
     @Override
-    public void homothetie() {
+    public void homothetie(float x) {
         // TODO Auto-generated method stub
         
     }

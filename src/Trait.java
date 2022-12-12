@@ -32,8 +32,14 @@ public class Trait extends Forme implements Transformation {
     }
 
     @Override
-    public void homothetie(){
-        // TODO Auto-generated method stub
+    public void homothetie(float x){
+        for (Point p : this.points){
+             
+            p.x *= x;
+            p.y *= x;
+
+        }
+        
     }
 
     @Override

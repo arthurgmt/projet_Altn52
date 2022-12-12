@@ -32,8 +32,12 @@ public class Elipse extends Forme implements Transformation {
     }
     
     @Override
-    public void homothetie(){
-        // TODO Auto-generated method stub
+    public void homothetie(float x){
+        Point p = this.getPoints().get(0);
+        
+        p.x = p.x * x;
+        width = width * x;
+        height = height * x;
     }
 
     @Override

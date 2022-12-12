@@ -1,6 +1,6 @@
 public interface Transformation {
 
-    void homothetie();
+    void homothetie(float x);
 
     void translation(int x, int y);
 
