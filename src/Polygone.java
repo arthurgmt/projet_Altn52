@@ -52,6 +52,16 @@ public class Polygone extends Forme implements Transformation {
         
     }
 
+    public void updateAire(){
+        double aire = 0;
+        for (int i = 0; i < points.size(); i++) {
+            Point p1 = points.get(i);
+            Point p2 = points.get((i + 1) % points.size());
+            aire += p1.getX() * p2.getY() - p2.getX() * p1.getY();
+        }
+        this.aire = aire;
+    }
+
     //dessin
     @Override
     public void paint(Graphics2D g){

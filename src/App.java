@@ -7,6 +7,7 @@ public class App{
 		Dessin pan = new Dessin();
 
     Image i = new Image();
+    Image i2 = new Image();
     Forme r_ = new Rectangle(0, 0, 500, 500);
     i.addForme(r_);
 
@@ -29,6 +30,8 @@ public class App{
     i.addForme(c);
     // i.addForme(r);
     // i.addForme(p);
+    i2.addForme(r);
+    i2.addForme(p);
 
     // modif 
     // c.symetriecentrale(250, 250);
@@ -37,6 +40,7 @@ public class App{
 
     // add image 
     pan.addImage(i);
+    pan.addImage(i2);
     for (Image image : pan.getImages()){
       for (Forme forme : image.getFormes()){
         System.out.println(forme);
