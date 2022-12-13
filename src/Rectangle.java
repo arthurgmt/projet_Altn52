@@ -87,7 +87,17 @@ public class Rectangle extends Forme implements Transformation {
 
         p.x += 2*dx;
         p.y += 2*dy;
+    }
 
+    @Override
+    public void rotation() {
+
+        Point p = this.getPoints().get(0);
+
+        int x = p.x;
+
+        p.x = p.y;
+        p.y = x;
     }
 
     @Override
@@ -100,4 +110,6 @@ public class Rectangle extends Forme implements Transformation {
                 ", perimetre=" + perimetre +
                 '}';
     }
+
+
 }

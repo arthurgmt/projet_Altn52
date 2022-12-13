@@ -72,7 +72,18 @@ public class Trait extends Forme {
             p.x += 2*distX;
             p.y += 2*distY;
         }
-        
+    }
+
+    @Override
+    public void rotation() {
+
+        for (Point p : this.points){
+
+            int x = p.x;
+
+            p.x = p.y;
+            p.y = x;
+        }
     }
 
     @Override

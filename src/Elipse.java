@@ -84,6 +84,16 @@ public class Elipse extends Forme {
     }
 
     @Override
+    public void rotation() {
+
+        Point p = this.getPoints().get(0);
+
+        int x = p.x;
+
+        p.x = p.y;
+        p.y = x;
+    }
+
     public String toString() {
         return "Elipse{" +
                 "width=" + width +

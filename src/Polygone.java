@@ -8,13 +8,48 @@ public class Polygone extends Forme implements Transformation {
         
         super();
         this.points = points;
-       
+        this.updatePerimetre();
     }
 
     public Polygone(){
         
         super();
        
+    }
+
+    public void updatePerimetre(){
+
+        double perimetre = 0;
+        Point precedent = null;
+        Point current = null;
+
+        for (Point p : this.points){
+            if (precedent == null){
+                precedent = p;
+            }else{
+                current = p;
+
+                int x1 = precedent.x;
+                int y1 = precedent.y;
+                int x2 = current.x;
+                int y2 = current.y;
+
+                perimetre += Math.sqrt((y2-y1)*(y2-y1)+(x2-x1)*(x2-x1));
+                precedent = current;
+            }
+        }
+
+        precedent = this.points.get(0);
+
+        int x1 = precedent.x;
+        int y1 = precedent.y;
+        int x2 = current.x;
+        int y2 = current.y;
+
+        perimetre += Math.sqrt((y2-y1)*(y2-y1)+(x2-x1)*(x2-x1));
+        
+        this.perimetre = perimetre;
+        
     }
 
     //dessin
@@ -70,8 +105,18 @@ public class Polygone extends Forme implements Transformation {
             p.x += 2*distX;
             p.y += 2*distY;
         }
-        
     }
 
+    @Override
+    public void rotation() {
+
+        for (Point p : this.points){
+
+            int x = p.x;
+
+            p.x = p.y;
+            p.y = -x;
+        }
+    }
 
 }
