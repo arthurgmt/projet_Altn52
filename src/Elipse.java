@@ -13,6 +13,16 @@ public class Elipse extends Forme implements Transformation {
         this.addPoint(x, y);
         this.width=width;
         this.height=height;
+        this.updateAire();
+        this.updatePerimetre();
+    }
+
+    public void updateAire(){
+        this.aire = Math.PI * (this.width/2) * (this.height/2); 
+    }
+
+    public void updatePerimetre(){
+        this.perimetre = 2*Math.PI*Math.sqrt((width*width+height*height)/2);
     }
 
     // getter
@@ -32,20 +42,27 @@ public class Elipse extends Forme implements Transformation {
     }
     
     @Override
-    public void homothetie(){
-        // TODO Auto-generated method stub
+    public void homothetie(float x){
+        Point p = this.getPoints().get(0);
+        
+        p.x = Math.round(p.x * x);
+        width = Math.round(width * x);
+        height = Math.round(height * x);
     }
 
     @Override
     public void translation(int x, int y) {
-        // TODO Auto-generated method stub
-        
+        Point p = this.points.get(0);
+
+        p.x += x;
+        p.y += y;
     }
 
     @Override
-    public void symetrieaxiale(int x1, int y1, int x2, int y2) {
-        // TODO Auto-generated method stub
-        
+    public void symetrieaxiale() {
+        Point p = this.points.get(0);
+
+        p.x = 500 - p.x - this.width;
     }
 
     @Override

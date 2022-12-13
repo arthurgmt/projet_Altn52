@@ -4,8 +4,8 @@ import java.awt.Graphics2D;
 public class Forme implements Transformation{ 
 
     ArrayList<Point> points; 
-    float aire = 0;
-    float perimetre = 0;
+    double aire = 0;
+    double perimetre = 0;
 
 
     public Forme(){
@@ -41,7 +41,7 @@ public class Forme implements Transformation{
     }
 
     @Override
-    public void homothetie() {
+    public void homothetie(float x) {
         // TODO Auto-generated method stub
         
     }
@@ -53,7 +53,7 @@ public class Forme implements Transformation{
     }
 
     @Override
-    public void symetrieaxiale(int x1, int y1, int x2, int y2) {
+    public void symetrieaxiale() {
         // TODO Auto-generated method stub
         
     }
@@ -61,7 +61,13 @@ public class Forme implements Transformation{
     @Override
     public void symetriecentrale(int x, int y) {
         // TODO Auto-generated method stub
-        
+
+    }
+
+    @Override
+    public void rotation() {
+        // TODO Auto-generated method stub
+
     }
 
     @Override

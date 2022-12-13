@@ -57,25 +57,33 @@ public class Dessin extends JPanel implements Transformation{
     }
 
     @Override
-    public void homothetie() {
+    public void homothetie(float x) {
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    public void translation() {
+    public void translation(int x, int y) {
         // TODO Auto-generated method stub
         
     }
 
     @Override
     public void symetrieaxiale() {
-        // TODO Auto-generated method stub
-        
+        for (Image i : images){
+            i.symetrieaxiale();
+        }
     }
 
     @Override
-    public void symetriecentrale() {
+    public void symetriecentrale(int x, int y) {
+        for (Image i : images){
+            i.symetriecentrale(x, y);
+        }
+    }
+
+    @Override
+    public void rotation() {
         // TODO Auto-generated method stub
         
     }

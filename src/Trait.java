@@ -7,6 +7,19 @@ public class Trait extends Forme implements Transformation {
         super();
         this.addPoint(x1, y1);
         this.addPoint(x2, y2);
+        this.updatePerimetre();
+    }
+
+    public void updatePerimetre() {
+        Point p1 = this.getPoints().get(0);
+        Point p2 = this.getPoints().get(1);
+
+        int x1 = p1.x;
+        int y1 = p1.y;
+        int x2 = p2.x;
+        int y2 = p2.y;
+
+        this.perimetre = Math.sqrt((y2-y1)*(y2-y1)+(x2-x1)*(x2-x1));
     }
 
     //dessin
@@ -20,8 +33,14 @@ public class Trait extends Forme implements Transformation {
     }
 
     @Override
-    public void homothetie(){
-        // TODO Auto-generated method stub
+    public void homothetie(float x){
+        for (Point p : this.points){
+             
+            p.x *= x;
+            p.y *= x;
+
+        }
+        
     }
 
     @Override
@@ -33,8 +52,11 @@ public class Trait extends Forme implements Transformation {
     }
 
     @Override
-    public void symetrieaxiale(int x1, int y1, int x2, int y2) {
-        // TODO Auto-generated method stub
+    public void symetrieaxiale() {
+        for (Point p : this.points){
+
+            p.x = 500 - p.x;
+        }
     }
 
     @Override
