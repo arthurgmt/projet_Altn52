@@ -1,6 +1,6 @@
 import java.awt.Graphics2D;
 
-public class Trait extends Forme implements Transformation {
+public class Trait extends Forme {
 
     public Trait(){
         super();
@@ -41,14 +41,13 @@ public class Trait extends Forme implements Transformation {
              
             p.x *= x;
             p.y *= x;
-
         }
-        
     }
 
     @Override
     public void translation(int x, int y) {
         for (Point p : this.points){
+
             p.x += x;
             p.y += y;
         }
