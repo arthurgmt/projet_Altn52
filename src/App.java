@@ -14,6 +14,7 @@ public class App{
     Forme c = new Elipse(0,0,100,100);
     Forme t = new Trait(200, 200, 500, 500);
     Forme r = new Rectangle(0, 0, 100, 80);
+    Forme r2 = new Rectangle(0, 0, 100, 80);
 
     Forme p = new Polygone();
     p.addPoint(10,10);

@@ -3,11 +3,11 @@ import java.util.Comparator;
 public class ComparateurForme implements Comparator {
     @Override
     public int compare(Object o1, Object o2) {
-        if(((Forme)o1).updatePerimetre() == ((Forme)o2).updatePerimetre()){
-            return ((Forme)o1).updateAire() - ((Forme)o2).updateAire();
+        if(((Forme)o1).getPerimetre() == ((Forme)o2).getPerimetre()){
+            return (int) (((Forme)o1).getAire() - ((Forme)o2).getAire());
         }
         else{
-            return ((Forme)o1).updatePerimetre() - ((Forme)o2).updatePerimetre();
+            return (int) (((Forme)o1).getPerimetre() - ((Forme)o2).getPerimetre());
         }
     }
 }

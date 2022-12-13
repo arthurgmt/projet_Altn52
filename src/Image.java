@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.TreeSet;
 
 public class Image implements Transformation{
     
     TreeSet<Forme> formes;
 
-    ComparateurForme comparateurForme;
+    ComparateurForme comparateurForme = new ComparateurForme();
     public Image(){
         this.formes = new TreeSet<Forme>(comparateurForme);
     }
@@ -18,7 +19,21 @@ public class Image implements Transformation{
     public TreeSet<Forme> getFormes(){
         return this.formes;
     }
-    
+
+    public double getPerimetre(){
+        double perimetre = 0;
+        for(Forme forme : formes){
+            perimetre += forme.getPerimetre();
+        }
+        return perimetre;
+    }
+    public double getAire(){
+        double aire = 0;
+        for(Forme forme : formes){
+            aire += forme.getAire();
+        }
+        return aire;
+    }
 
     @Override
     public void homothetie(float x) {

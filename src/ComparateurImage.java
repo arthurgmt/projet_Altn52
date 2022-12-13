@@ -1,13 +1,12 @@
 import java.util.Comparator;
 
 public class ComparateurImage implements Comparator {
-    @Override
     public int compare(Object o1, Object o2) {
-        if(((Image)o1).updatePerimetre() == ((Image)o2).updatePerimetre()){
-            return ((Image)o1).updateAire() - ((Image)o2).updateAire();
+        if(((Image)o1).getPerimetre() == ((Image)o2).getPerimetre()){
+            return (int) (((Image)o1).getAire() - ((Image)o2).getAire());
         }
         else{
-            return ((Image)o1).updatePerimetre() - ((Image)o2).updatePerimetre();
+            return (int) (((Image)o1).getPerimetre() - ((Image)o2).getPerimetre());
         }
     }
 }

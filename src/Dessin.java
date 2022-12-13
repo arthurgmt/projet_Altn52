@@ -18,9 +18,9 @@ import javax.swing.JPanel;
 public class Dessin extends JPanel implements Transformation{
 
     TreeSet<Image> images;
-
+    ComparateurImage comparateurImage = new ComparateurImage();
     public Dessin(){
-        this.images = new TreeSet<Image>();
+        this.images = new TreeSet<Image>(comparateurImage);
     }
 
     public Dessin(TreeSet<Image> images){

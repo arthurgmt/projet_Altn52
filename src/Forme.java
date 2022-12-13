@@ -5,6 +5,15 @@ public class Forme implements Transformation{
 
     ArrayList<Point> points; 
     double aire = 0;
+
+    public double getAire() {
+        return aire;
+    }
+
+    public double getPerimetre() {
+        return perimetre;
+    }
+
     double perimetre = 0;
 
 
