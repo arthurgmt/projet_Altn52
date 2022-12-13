@@ -49,7 +49,6 @@ public class Polygone extends Forme implements Transformation {
         perimetre += Math.sqrt((y2-y1)*(y2-y1)+(x2-x1)*(x2-x1));
         
         this.perimetre = perimetre;
-        
     }
 
     public void updateAire(){
