@@ -41,7 +41,7 @@ public class Forme implements Transformation{
     }
 
     @Override
-    public void homothetie() {
+    public void homothetie(float x) {
         // TODO Auto-generated method stub
         
     }
@@ -60,6 +60,12 @@ public class Forme implements Transformation{
 
     @Override
     public void symetriecentrale(int x, int y) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void rotation() {
         // TODO Auto-generated method stub
         
     }

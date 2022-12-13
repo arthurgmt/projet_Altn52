@@ -81,5 +81,11 @@ public class Dessin extends JPanel implements Transformation{
             i.symetriecentrale(x, y);
         }
     }
+
+    @Override
+    public void rotation() {
+        // TODO Auto-generated method stub
+        
+    }
     
 }

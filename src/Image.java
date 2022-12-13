@@ -20,7 +20,7 @@ public class Image implements Transformation{
     
 
     @Override
-    public void homothetie() {
+    public void homothetie(float x) {
         // TODO Auto-generated method stub
         
     }
@@ -43,6 +43,12 @@ public class Image implements Transformation{
         for (Forme f: formes){
             f.symetriecentrale(x, y);
         }
+        
+    }
+
+    @Override
+    public void rotation() {
+        // TODO Auto-generated method stub
         
     }
 

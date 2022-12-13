@@ -45,9 +45,9 @@ public class Elipse extends Forme implements Transformation {
     public void homothetie(float x){
         Point p = this.getPoints().get(0);
         
-        p.x = p.x * x;
-        width = width * x;
-        height = height * x;
+        p.x = Math.round(p.x * x);
+        width = Math.round(width * x);
+        height = Math.round(height * x);
     }
 
     @Override
