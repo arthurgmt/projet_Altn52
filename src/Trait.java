@@ -2,6 +2,9 @@ import java.awt.Graphics2D;
 
 public class Trait extends Forme implements Transformation {
 
+    public Trait(){
+        super();
+    }
     public Trait(int x1, int y1, int x2, int y2){
         
         super();
@@ -73,4 +76,10 @@ public class Trait extends Forme implements Transformation {
         
     }
 
+    @Override
+    public String toString() {
+        return "Trait{" +
+                "points=" + points +
+                '}';
+    }
 }

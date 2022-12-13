@@ -1,3 +1,5 @@
+import org.w3c.dom.css.Rect;
+
 import java.util.TreeSet;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -15,7 +17,7 @@ import javax.imageio.ImageIO;
 import javax.lang.model.type.ArrayType;
 import javax.swing.JPanel;
 
-public class Dessin extends JPanel implements Transformation{
+public class Dessin extends JPanel implements Transformation, Cloneable{
 
     TreeSet<Image> images;
     ComparateurImage comparateurImage = new ComparateurImage();
@@ -23,6 +25,39 @@ public class Dessin extends JPanel implements Transformation{
         this.images = new TreeSet<Image>(comparateurImage);
     }
 
+    public Dessin copie (){
+        Dessin d2 = new Dessin();
+        String type;
+        Image newImage;
+        Forme newForme;
+        for (Image image : this.images){
+            newImage = new Image();
+            for (Forme forme : image.formes){
+                if (forme instanceof Elipse){
+                    newForme = new Elipse(forme.getPoints().get(0).getX()+500, forme.getPoints().get(0).getY(), ((Elipse) forme).getWidth(), ((Elipse) forme).getHeight());
+                    System.out.println("elipse ancienne : " + forme + " nouvelle "+ newForme);
+                } else if (forme instanceof Rectangle) {
+                    newForme = new Rectangle(forme.getPoints().get(0).getX()+500, forme.getPoints().get(0).getY(), ((Rectangle) forme).getWidth(), ((Rectangle) forme).getHeight());
+                    System.out.println("Rectangle ancien : "+ forme + " nouveau "+newForme);
+                } else {
+                    if (forme instanceof Polygone) {
+                        System.out.println("polygone ancien "+forme);
+                        newForme = new Polygone();
+                    } else{
+                        System.out.println("trait ancien "+forme);
+                        newForme = new Trait();
+                    }
+                    for (Point point : forme.points){
+                        newForme.addPoint(point.getX()+500, point.getY());
+                    }
+                    System.out.println(" nouveau " + newForme);
+                }
+                newImage.addForme(newForme);
+            }
+            d2.addImage(newImage);
+        }
+        return d2;
+    }
     public Dessin(TreeSet<Image> images){
         this.images = images;
     }

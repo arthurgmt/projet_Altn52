@@ -8,7 +8,6 @@ public class Elipse extends Forme implements Transformation {
     int height;
 
     public Elipse(int x, int y, int width, int height){
-        
         super();
         this.addPoint(x, y);
         this.width=width;
@@ -32,6 +31,13 @@ public class Elipse extends Forme implements Transformation {
 
     public int getHeight(){
         return this.height;
+    }
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     //dessin
@@ -78,4 +84,14 @@ public class Elipse extends Forme implements Transformation {
 
     }
 
+    @Override
+    public String toString() {
+        return "Elipse{" +
+                "width=" + width +
+                ", height=" + height +
+                ", points=" + points +
+                ", aire=" + aire +
+                ", perimetre=" + perimetre +
+                '}';
+    }
 }

@@ -37,14 +37,28 @@ public class App{
 
     // add image 
     pan.addImage(i);
+    for (Image image : pan.getImages()){
+      for (Forme forme : image.getFormes()){
+        System.out.println(forme);
+      }
+    }
+    Dessin pan2 = pan.copie();
+    for (Image image : pan2.getImages()){
+      for (Forme forme : image.getFormes()){
+        System.out.println(forme);
+      }
+    }
 
     // view
-    Frame fen = new Frame(600,600);
+    Frame fen = new Frame(1200,1200);
 
 		fen.add(pan);
+        //fen.add(pan2);
 		fen.repaint();
 		fen.revalidate();
-
+    fen.add(pan2);
+    fen.repaint();
+    fen.revalidate();
   }
 
 }
