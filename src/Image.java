@@ -37,14 +37,17 @@ public class Image implements Transformation{
 
     @Override
     public void homothetie(float x) {
-        // TODO Auto-generated method stub
+        for (Forme f: formes){
+            f.homothetie(x);
+        }
         
     }
 
     @Override
     public void translation(int x, int y) {
-        // TODO Auto-generated method stub
-        
+        for (Forme f: formes){
+            f.translation(x, y);
+        }
     }
 
     @Override

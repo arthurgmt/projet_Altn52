@@ -93,14 +93,17 @@ public class Dessin extends JPanel implements Transformation, Cloneable{
 
     @Override
     public void homothetie(float x) {
-        // TODO Auto-generated method stub
+        for (Image i : images){
+            i.homothetie(x);
+        }
         
     }
 
     @Override
     public void translation(int x, int y) {
-        // TODO Auto-generated method stub
-        
+        for (Image i : images){
+            i.translation(x, y);
+        }
     }
 
     @Override
