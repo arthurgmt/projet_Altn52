@@ -63,4 +63,17 @@ public class Forme implements Transformation{
         // TODO Auto-generated method stub
         
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj){
+            return true;
+        }
+        else if (obj == null || getClass() != obj.getClass()){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 }
