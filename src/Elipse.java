@@ -1,8 +1,7 @@
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 
-public class Elipse extends Forme implements Transformation {
+public class Elipse extends Forme {
 
     int width;
     int height;

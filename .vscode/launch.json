@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "projet_Altn52_c4416f97"
+        },
+        {
             "name": "Launch Chrome",
             "request": "launch",
             "type": "chrome",
