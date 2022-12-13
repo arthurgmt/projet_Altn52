@@ -128,4 +128,11 @@ public class Polygone extends Forme implements Transformation {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Rectangle = " +
+                "aire : " + aire +
+                " | perimetre : " + perimetre +
+                " | " + points;
+    }
 }

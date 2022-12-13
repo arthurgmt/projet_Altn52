@@ -102,13 +102,12 @@ public class Rectangle extends Forme implements Transformation {
 
     @Override
     public String toString() {
-        return "Rectangle{" +
-                "width=" + width +
-                ", height=" + height +
-                ", points=" + points +
-                ", aire=" + aire +
-                ", perimetre=" + perimetre +
-                '}';
+        return "Rectangle = " +
+                "largeur : " + width +
+                " | hauteur : " + height +
+                " | aire : " + aire +
+                " | perimetre : " + perimetre +
+                " | " + points;
     }
 
 

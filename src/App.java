@@ -4,6 +4,9 @@ public class App{
 
   public static void main(String[] args){
 
+    System.out.println("*** Bienvenue sur cette application de dessin ! ***\n");
+
+    ArrayList <Dessin> dessins = new ArrayList<Dessin>();
 		Dessin pan = new Dessin();
 
     Image i = new Image();
@@ -19,7 +22,7 @@ public class App{
 
     Forme p = new Polygone();
     p.addPoint(10,10);
-    p.addPoint(210,10);
+    p.addPoint(60,10);
     p.addPoint(210,210);
     p.addPoint(10,210);
 
@@ -30,7 +33,7 @@ public class App{
     i.addForme(c);
     // i.addForme(r);
     // i.addForme(p);
-    i2.addForme(r);
+    //i2.addForme(r);
     i2.addForme(p);
 
     // modif 
@@ -41,20 +44,15 @@ public class App{
     // add image 
     pan.addImage(i);
     pan.addImage(i2);
-    for (Image image : pan.getImages()){
-      for (Forme forme : image.getFormes()){
-        System.out.println(forme);
-      }
-    }
+
     Dessin pan2 = pan.copie();
-    for (Image image : pan2.getImages()){
-      for (Forme forme : image.getFormes()){
-        System.out.println(forme);
-      }
-    }
+    dessins.add(pan);
+    dessins.add(pan2);
+    MenuConsole menuConsole = new MenuConsole(dessins);
+    menuConsole.menuPrincipal();
 
     // view
-    Frame fen = new Frame(1200,1200);
+    /*Frame fen = new Frame(1200,1200);
 
 		fen.add(pan);
         //fen.add(pan2);
@@ -62,7 +60,7 @@ public class App{
 		fen.revalidate();
     fen.add(pan2);
     fen.repaint();
-    fen.revalidate();
+    fen.revalidate();*/
   }
 
 }

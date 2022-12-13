@@ -83,4 +83,9 @@ public class Image implements Transformation{
             return true;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Image : \n" + formes + "\n";
+    }
 }

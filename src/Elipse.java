@@ -95,12 +95,11 @@ public class Elipse extends Forme {
     }
 
     public String toString() {
-        return "Elipse{" +
-                "width=" + width +
-                ", height=" + height +
-                ", points=" + points +
-                ", aire=" + aire +
-                ", perimetre=" + perimetre +
-                '}';
+        return "Elipse = " +
+                "largeur : " + width +
+                " | hauteur : " + height +
+                " | aire : " + aire +
+                " | perimetre : " + perimetre +
+                " | " + points;
     }
 }
