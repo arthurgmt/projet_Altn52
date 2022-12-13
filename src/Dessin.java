@@ -17,13 +17,13 @@ import javax.swing.JPanel;
 
 public class Dessin extends JPanel implements Transformation{
 
-    ArrayList<Image> images;
+    TreeSet<Image> images;
 
     public Dessin(){
-        this.images = new ArrayList<Image>();
+        this.images = new TreeSet<Image>();
     }
 
-    public Dessin(ArrayList<Image> images){
+    public Dessin(TreeSet<Image> images){
         this.images = images;
     }
 
@@ -52,7 +52,7 @@ public class Dessin extends JPanel implements Transformation{
 
 
     //getter
-    public ArrayList<Image> getImages(){
+    public TreeSet<Image> getImages(){
         return this.images;
     }
 

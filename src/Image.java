@@ -3,10 +3,11 @@ import java.util.TreeSet;
 
 public class Image implements Transformation{
     
-    ArrayList<Forme> formes;
+    TreeSet<Forme> formes;
 
+    ComparateurForme comparateurForme;
     public Image(){
-        this.formes = new ArrayList<Forme>();
+        this.formes = new TreeSet<Forme>(comparateurForme);
     }
 
     public void addForme(Forme f){
@@ -14,7 +15,7 @@ public class Image implements Transformation{
     }
 
     //getter
-    public ArrayList<Forme> getFormes(){
+    public TreeSet<Forme> getFormes(){
         return this.formes;
     }
     
@@ -52,4 +53,16 @@ public class Image implements Transformation{
         
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj){
+            return true;
+        }
+        else if (obj == null || getClass() != obj.getClass()){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 }

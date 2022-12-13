@@ -1,6 +1,6 @@
 import junit.framework.*;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api .Assertions.*;
 
 public class myTest{
 
