@@ -1,6 +1,11 @@
 import java.awt.Graphics2D;
+import java.util.ArrayList;
+import java.util.TreeSet;
 
-public class Rectangle extends Forme implements Transformation {
+import static java.lang.Math.cos;
+import static java.lang.Math.sin;
+
+public class Rectangle extends Polygone{
 
     int width;
 
@@ -23,6 +28,7 @@ public class Rectangle extends Forme implements Transformation {
         this.addPoint(x, y);
         this.width=width;
         this.height=height;
+        this.updatePoints();
         this.updateAire();
         this.updatePerimetre();
     }
@@ -44,61 +50,37 @@ public class Rectangle extends Forme implements Transformation {
         return this.height;
     }
 
-    //dessin
-    @Override
-    public void paint(Graphics2D g){
-        Point p = this.getPoints().get(0);
-        g.drawRect(p.x, p.y, this.width, this.height);  
+    public void updatePoints () {
+        Point p1 = this.points.get(0);
+        this.addPoint(p1.getX() + this.width, p1.getY());
+        this.addPoint(p1.getX() + this.width, p1.getY() + this.height);
+        this.addPoint(p1.getX(), p1.getY() + this.height);
     }
 
-    @Override
-    public void homothetie(float x){
-    
-        Point p = this.points.get(0);
 
-        p.x *= x;
-        p.y *= x;
-
-    }
-
-    @Override
-    public void translation(int x, int y) {
-        Point p = this.points.get(0);
-
-        p.x += x;
-        p.y += y;
-        
-    }
-
-    @Override
-    public void symetrieaxiale() {
-
-        Point p = this.points.get(0);
-        p.x = 500 - p.x - this.width;
-    }
-
-    @Override
-    public void symetriecentrale(int x, int y) {
-        
-        Point p = this.points.get(0);
-
-        int dx = x - (p.x + width/2);
-        int dy = y - (p.y + height/2); 
-
-        p.x += 2*dx;
-        p.y += 2*dy;
-    }
-
-    @Override
-    public void rotation() {
-
-        Point p = this.getPoints().get(0);
-
-        int x = p.x;
-
-        p.x = p.y;
-        p.y = x;
-    }
+    /*@Override
+    public void rotation (){
+        Point pmax = points.get(0);
+        for (Point p : this.points){
+            if(pmax.getX()==p.getX()){
+                if(pmax.getY()<p.getY()) pmax = p;
+            } else {
+                if (pmax.getX() < p.getX()) pmax = p;
+            }
+        }
+        System.out.println("pmax : "+pmax);
+        for (Point p : this.points){
+            System.out.println("le point : "+p);
+            if(!p.equals(pmax)){
+                int newX = (int) Math.round((p.getX()-pmax.getX())*cos(90)+(p.getY()-pmax.getY())*sin(90)+pmax.getX());
+                int newY = (int) Math.round((p.getX()-pmax.getX())*sin(90)+(p.getY()-pmax.getY())*cos(90)+pmax.getY());
+                System.out.println("new x"+newX);
+                System.out.println("new y"+newY);
+                p.setX(newX);
+                p.setY(newY);
+            }
+        }
+    }*/
 
     @Override
     public String toString() {

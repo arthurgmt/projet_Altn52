@@ -88,6 +88,10 @@ public class Elipse extends Forme {
 
         Point p = this.getPoints().get(0);
 
+        int height = this.height;
+        this.height = this.width;
+        this.width = height;
+
         int x = p.x;
 
         p.x = p.y;

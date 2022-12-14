@@ -1,6 +1,9 @@
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
+import static java.lang.Math.cos;
+import static java.lang.Math.sin;
+
 public class Polygone extends Forme implements Transformation {
 
     // A polygon is a list of point 
@@ -117,14 +120,22 @@ public class Polygone extends Forme implements Transformation {
     }
 
     @Override
-    public void rotation() {
-
+    public void rotation (){
+        Point pmax = points.get(0);
         for (Point p : this.points){
-
-            int x = p.x;
-
-            p.x = p.y;
-            p.y = -x;
+            if(pmax.getX()==p.getX()){
+                if(pmax.getY()<p.getY()) pmax = p;
+            } else {
+                if (pmax.getX() < p.getX()) pmax = p;
+            }
+        }
+        for (Point p : this.points){
+            if(!p.equals(pmax)){
+                int newX = (int) Math.round((p.getX()-pmax.getX())*cos(3.14)+(p.getY()-pmax.getY())*sin(3.14)+pmax.getX());
+                int newY = (int) Math.round((p.getX()-pmax.getX())*sin(3.14)+(p.getY()-pmax.getY())*cos(3.14)+pmax.getY());
+                p.setX(newX);
+                p.setY(newY);
+            }
         }
     }
 
