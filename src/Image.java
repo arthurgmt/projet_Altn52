@@ -67,8 +67,9 @@ public class Image implements Transformation{
 
     @Override
     public void rotation() {
-        // TODO Auto-generated method stub
-        
+        for (Forme f: formes){
+            f.rotation();
+        }
     }
 
     @Override

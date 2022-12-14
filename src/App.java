@@ -28,6 +28,7 @@ public class App{
 
     // add formes to image
     i.addForme(t);
+    i.rotation();
     System.out.println(r);
     //t.rotation();
     System.out.println(r);

@@ -117,8 +117,9 @@ public class Dessin extends JPanel implements Transformation, Cloneable{
 
     @Override
     public void rotation() {
-        // TODO Auto-generated method stub
-        
+        for (Image i : images){
+            i.rotation();
+        }
     }
 
     @Override
