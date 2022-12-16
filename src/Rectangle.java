@@ -57,31 +57,6 @@ public class Rectangle extends Polygone{
         this.addPoint(p1.getX(), p1.getY() + this.height);
     }
 
-
-    /*@Override
-    public void rotation (){
-        Point pmax = points.get(0);
-        for (Point p : this.points){
-            if(pmax.getX()==p.getX()){
-                if(pmax.getY()<p.getY()) pmax = p;
-            } else {
-                if (pmax.getX() < p.getX()) pmax = p;
-            }
-        }
-        System.out.println("pmax : "+pmax);
-        for (Point p : this.points){
-            System.out.println("le point : "+p);
-            if(!p.equals(pmax)){
-                int newX = (int) Math.round((p.getX()-pmax.getX())*cos(90)+(p.getY()-pmax.getY())*sin(90)+pmax.getX());
-                int newY = (int) Math.round((p.getX()-pmax.getX())*sin(90)+(p.getY()-pmax.getY())*cos(90)+pmax.getY());
-                System.out.println("new x"+newX);
-                System.out.println("new y"+newY);
-                p.setX(newX);
-                p.setY(newY);
-            }
-        }
-    }*/
-
     @Override
     public String toString() {
         return "Rectangle = " +
@@ -89,7 +64,7 @@ public class Rectangle extends Polygone{
                 " | hauteur : " + height +
                 " | aire : " + aire +
                 " | perimetre : " + perimetre +
-                " | " + points;
+                " | " + points + "\n";
     }
 
 

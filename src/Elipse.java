@@ -104,6 +104,6 @@ public class Elipse extends Forme {
                 " | hauteur : " + height +
                 " | aire : " + aire +
                 " | perimetre : " + perimetre +
-                " | " + points;
+                " | " + points + "\n";
     }
 }

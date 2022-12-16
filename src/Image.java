@@ -11,10 +11,6 @@ public class Image implements Transformation{
         this.formes = new TreeSet<Forme>(comparateurForme);
     }
 
-    public void addForme(Forme f){
-        this.formes.add(f);
-    }
-
     //getter
     public TreeSet<Forme> getFormes(){
         return this.formes;
@@ -35,12 +31,15 @@ public class Image implements Transformation{
         return aire;
     }
 
+    public void addForme(Forme f){
+        this.formes.add(f);
+    }
+
     @Override
     public void homothetie(float x) {
         for (Forme f: formes){
             f.homothetie(x);
         }
-        
     }
 
     @Override
@@ -72,6 +71,21 @@ public class Image implements Transformation{
         }
     }
 
+    public void affichagePartielImage(){
+        int i = 0;
+        for (Forme forme : this.formes){
+            i++;
+            System.out.println(i + "- " + forme.getClass().getName() + " = périmètre : " + (double) Math.round(forme.getPerimetre() * 100) / 100 + " | aire : " + (double) Math.round(forme.getAire() * 100) / 100);
+        }
+    }
+    public void affichageCompletImage(){
+        int i = 0;
+        for (Forme forme : this.formes){
+            i++;
+            System.out.println(i + "- " + forme.getClass().getName() + " = périmètre : " + (double) Math.round(forme.getPerimetre() * 100) / 100 + " | aire : " + (double) Math.round(forme.getAire() * 100) / 100
+                    + " | " + forme.getPoints());
+        }
+    }
     @Override
     public boolean equals(Object obj) {
         if (this == obj){

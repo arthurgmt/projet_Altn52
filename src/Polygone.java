@@ -144,6 +144,6 @@ public class Polygone extends Forme implements Transformation {
         return "Rectangle = " +
                 "aire : " + aire +
                 " | perimetre : " + perimetre +
-                " | " + points;
+                " | " + points + "\n";
     }
 }

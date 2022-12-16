@@ -89,6 +89,6 @@ public class Trait extends Forme {
     @Override
     public String toString() {
         return "Trait = " +
-                points;
+                points + "\n";
     }
 }

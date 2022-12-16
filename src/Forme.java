@@ -1,10 +1,15 @@
 import java.util.ArrayList;
 import java.awt.Graphics2D;
 
-public class Forme implements Transformation{ 
+abstract class Forme implements Transformation{
 
-    ArrayList<Point> points; 
+    ArrayList<Point> points;
     double aire = 0;
+    double perimetre = 0;
+
+    public Forme(){
+        this.points = new ArrayList<Point>();
+    }
 
     public double getAire() {
         return aire;
@@ -14,28 +19,6 @@ public class Forme implements Transformation{
         return perimetre;
     }
 
-    double perimetre = 0;
-
-
-    public Forme(){
-        this.points = new ArrayList<Point>();
-    }
-    
-    public void addPoint(int x, int y){
-        Point p = new Point(x, y);
-        try {
-            this.points.add(p);
-        }catch (NullPointerException e){
-            this.points = new ArrayList<Point>();
-            this.points.add(p);
-        }   
-    }
-
-    public void paint(Graphics2D g){
-        
-    }
-
-    // getter
     public ArrayList<Point> getPoints(){
         return this.points;
     }
@@ -48,35 +31,37 @@ public class Forme implements Transformation{
     public void setPerimetre(float perimetre){
         this.perimetre = perimetre;
     }
+    
+    public void addPoint(int x, int y){
+        Point p = new Point(x, y);
+        try {
+            this.points.add(p);
+        }catch (NullPointerException e){
+            this.points = new ArrayList<Point>();
+            this.points.add(p);
+        }   
+    }
+
+    abstract void paint(Graphics2D g);
 
     @Override
     public void homothetie(float x) {
-        // TODO Auto-generated method stub
-        
     }
 
     @Override
     public void translation(int x, int y) {
-        // TODO Auto-generated method stub
-        
     }
 
     @Override
     public void symetrieaxiale() {
-        // TODO Auto-generated method stub
-        
     }
 
     @Override
     public void symetriecentrale(int x, int y) {
-        // TODO Auto-generated method stub
-
     }
 
     @Override
     public void rotation() {
-        // TODO Auto-generated method stub
-
     }
 
     @Override

@@ -29,15 +29,13 @@ public class App{
     // add formes to image
     i.addForme(t);
     i.rotation();
-    System.out.println(r);
     //t.rotation();
-    System.out.println(r);
-    //i.addForme(t);
-    //i.addForme(c);
-    // i.addForme(r);
-    // i.addForme(p);
-    //i2.addForme(r);
-    //i2.addForme(p);
+    i.addForme(t);
+    i.addForme(c);
+    i.addForme(r);
+    i.addForme(p);
+    i2.addForme(r);
+    i2.addForme(p);
 
     // modif 
     // c.symetriecentrale(250, 250);
@@ -51,19 +49,19 @@ public class App{
     Dessin pan2 = pan.copie();
     dessins.add(pan);
     dessins.add(pan2);
-    /*MenuConsole menuConsole = new MenuConsole(dessins);
-    menuConsole.menuPrincipal();*/
+    MenuConsole menuConsole = new MenuConsole(dessins);
+    menuConsole.menuPrincipal();
 
     // view
     Frame fen = new Frame(1200,1200);
 
-		fen.add(pan);
+		/*fen.add(pan);
         //fen.add(pan2);
 		fen.repaint();
 		fen.revalidate();
     //fen.add(pan2);
     fen.repaint();
-    fen.revalidate();
+    fen.revalidate();*/
   }
 
 }
