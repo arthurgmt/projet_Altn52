@@ -20,6 +20,7 @@ public class Polygone extends Forme implements Transformation {
        
     }
 
+    @Override
     public void updatePerimetre(){
 
         double perimetre = 0;
@@ -54,6 +55,7 @@ public class Polygone extends Forme implements Transformation {
         this.perimetre = perimetre;
     }
 
+    @Override
     public void updateAire(){
         double aire = 0;
         for (int i = 0; i < points.size(); i++) {

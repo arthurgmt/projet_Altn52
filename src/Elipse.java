@@ -15,10 +15,12 @@ public class Elipse extends Forme {
         this.updatePerimetre();
     }
 
+    @Override
     public void updateAire(){
         this.aire = Math.PI * (this.width/2) * (this.height/2); 
     }
-
+    
+    @Override
     public void updatePerimetre(){
         this.perimetre = 2*Math.PI*Math.sqrt((width*width+height*height)/2);
     }

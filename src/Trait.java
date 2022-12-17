@@ -13,6 +13,7 @@ public class Trait extends Forme {
         this.updatePerimetre();
     }
 
+    @Override
     public void updatePerimetre() {
         Point p1 = this.getPoints().get(0);
         Point p2 = this.getPoints().get(1);

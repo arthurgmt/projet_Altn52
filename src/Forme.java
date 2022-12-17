@@ -41,6 +41,8 @@ abstract class Forme implements Transformation{
             this.points.add(p);
         }   
     }
+    public void updateAire(){}
+    public void updatePerimetre(){}
 
     abstract void paint(Graphics2D g);
 

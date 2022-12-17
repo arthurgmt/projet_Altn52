@@ -75,6 +75,8 @@ public class Image implements Transformation{
         int i = 0;
         for (Forme forme : this.formes){
             i++;
+            forme.updatePerimetre();
+            forme.updateAire();
             System.out.println(i + "- " + forme.getClass().getName() + " = périmètre : " + (double) Math.round(forme.getPerimetre() * 100) / 100 + " | aire : " + (double) Math.round(forme.getAire() * 100) / 100);
         }
     }
@@ -82,6 +84,8 @@ public class Image implements Transformation{
         int i = 0;
         for (Forme forme : this.formes){
             i++;
+            forme.updatePerimetre();
+            forme.updateAire();
             System.out.println(i + "- " + forme.getClass().getName() + " = périmètre : " + (double) Math.round(forme.getPerimetre() * 100) / 100 + " | aire : " + (double) Math.round(forme.getAire() * 100) / 100
                     + " | " + forme.getPoints());
         }
