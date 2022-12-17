@@ -99,11 +99,21 @@ public class Elipse extends Forme {
     }
 
     public String toString() {
-        return "Elipse = " +
-                "largeur : " + width +
-                " | hauteur : " + height +
-                " | aire : " + aire +
-                " | perimetre : " + perimetre +
-                " | " + points + "\n";
+        if (this.width == this.height){
+            return "Cercle = " +
+                    "largeur : " + width +
+                    " | hauteur : " + height +
+                    " | aire : " + aire +
+                    " | perimetre : " + perimetre +
+                    " | " + points + "\n";
+        }
+        else{
+            return "Elipse = " +
+                    "largeur : " + width +
+                    " | hauteur : " + height +
+                    " | aire : " + aire +
+                    " | perimetre : " + perimetre +
+                    " | " + points + "\n";
+        }
     }
 }

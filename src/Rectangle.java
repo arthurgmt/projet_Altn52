@@ -59,12 +59,22 @@ public class Rectangle extends Polygone{
 
     @Override
     public String toString() {
-        return "Rectangle = " +
-                "largeur : " + width +
-                " | hauteur : " + height +
-                " | aire : " + aire +
-                " | perimetre : " + perimetre +
-                " | " + points + "\n";
+        if (this.width == this.height){
+            return "Carré = " +
+                    "largeur : " + width +
+                    " | hauteur : " + height +
+                    " | aire : " + aire +
+                    " | perimetre : " + perimetre +
+                    " | " + points + "\n";
+        }
+        else{
+            return "Rectangle = " +
+                    "largeur : " + width +
+                    " | hauteur : " + height +
+                    " | aire : " + aire +
+                    " | perimetre : " + perimetre +
+                    " | " + points + "\n";
+        }
     }
 
 

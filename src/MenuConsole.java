@@ -2,11 +2,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuConsole {
-    ArrayList <Dessin> dessins;
-    Dessin dessinParent;
-    int indexDessinPrent;
-    Image imageParent;
-    int indexImageParent;
+    private ArrayList <Dessin> dessins;
+    private Dessin dessinParent;
+    private int indexDessinPrent;
+    private Image imageParent;
+    private int indexImageParent;
+    private Scanner sc = new Scanner(System.in);
 
     public MenuConsole (ArrayList<Dessin> dessins){
         this.dessins = dessins;
@@ -23,8 +24,7 @@ public class MenuConsole {
                 "2- Ajouter un dessin\n" +
                 "3- Passer en mode IHM\n" +
                 "4- Quitter\n");
-        Scanner sc = new Scanner(System.in);
-        int choix = Integer.parseInt(sc.nextLine());
+        int choix = Integer.parseInt(this.sc.nextLine());
         switch (choix){
             case 1 : System.out.println("\n" + "A quel dessin souhaitez-vous apporter des modifications ? (entrer R pour revenir en arrière)");
                 String saisie = sc.nextLine();
@@ -70,19 +70,23 @@ public class MenuConsole {
             image.affichageCompletImage();
         }
         System.out.println("\n\nQue souhaitez-vous faire ?\n" +
-                "1- Modifier une image \n" +
-                "2- Dupliquer le dessin\n" +
-                "3- Appliquer une transformation au dessin\n" +
-                "4- Revenir en arrière");
-        Scanner sc = new Scanner(System.in);
-        int choix = Integer.parseInt(sc.nextLine());
+                "1- Ajouter une image \n" +
+                "2- Modifier une image \n" +
+                "3- Dupliquer le dessin\n" +
+                "4- Appliquer une transformation au dessin\n" +
+                "5- Revenir en arrière\n");
+        int choix = Integer.parseInt(this.sc.nextLine());
         switch (choix){
             case 1 :
+                Image newImage = new Image();
+                this.dessinParent.addImage(newImage);
+                menuDessin(this.dessinParent, this.indexDessinPrent);
+            case 2 :
                 Image image = null;
                 int indexImage = 0;
                 do{
                     System.out.println("Quelle image souhaitez-vous modifier ?");
-                    int choixImage = Integer.parseInt(sc.nextLine());
+                    int choixImage = Integer.parseInt(this.sc.nextLine());
                     for (Image img : dessin.getImages()){
                         indexImage++;
                         if (indexImage == choixImage) image = img;
@@ -92,16 +96,16 @@ public class MenuConsole {
                 this.indexImageParent = indexImage;
                 menuImage(image, indexImage);
                 break;
-            case 2 :
+            case 3 :
                 Dessin dnew = new Dessin();
                 dnew = dessin.copie();
                 this.dessins.add(dnew);
                 menuDessin(dessin, index);
                 break;
-            case 3 :
+            case 4 :
                 menuTransformation(dessin, index);
                 break;
-            case 4:
+            case 5 :
                 menuPrincipal();
                 break;
             default:
@@ -114,13 +118,23 @@ public class MenuConsole {
         System.out.println("\n\nVoici la liste détaillée des formes de l'image n°"+index);
         image.affichageCompletImage();
         System.out.println("\nQue souhaitez-vous faire ?\n" +
-                "1- Modifier une forme \n" +
-                "2- Appliquer une transformation à l'image\n" +
-                "3- Revenir en arrière");
-        Scanner sc = new Scanner(System.in);
-        int choix = Integer.parseInt(sc.nextLine());
+                "1- Ajouter une forme \n" +
+                "2- Modifier une forme \n" +
+                "3- Appliquer une transformation à l'image\n" +
+                "4- Revenir en arrière");
+        int choix = Integer.parseInt(this.sc.nextLine());
         switch (choix){
-            case 1 :
+            case 1:
+                int indexNewForme = -1;
+                do{
+                    System.out.println("Quelle forme souhaitez-vous ajouter ?\n" + "1- Ellipse\n" + "2- Cercle\n" +
+                            "3- Trait\n" + "4- Carré\n" + "5- Rectangle\n" + "6- Polygone\n" + "7- Retour en arrière\n");
+                    indexNewForme = Integer.parseInt(this.sc.nextLine());
+                    menuForme(indexNewForme);
+                }while(indexNewForme<0 && indexNewForme<8);
+                menuImage(this.imageParent, this.indexImageParent);
+                break;
+            case 2 :
                 Forme forme = null;
                 int indexForme = 0;
                 do{
@@ -133,16 +147,87 @@ public class MenuConsole {
                 }while(forme == null);
                 menuTransformation(forme, indexForme);
                 break;
-            case 2 :
+            case 3 :
                 menuTransformation(image, index);
                 break;
-            case 3:
+            case 4:
                 menuDessin(this.dessinParent, this.indexDessinPrent);
             default:
                 System.out.println("Erreur de saisie");
                 menuPrincipal();
                 break;
         }
+    }
+    public void menuForme(int index){
+        int width;
+        switch (index){
+            case 1 :
+                Elipse elipse = new Elipse(saisieUtilisateur(1), saisieUtilisateur(2), saisieUtilisateur(3), saisieUtilisateur(4));
+                this.imageParent.addForme(elipse);
+                break;
+            case 2 :
+                width = saisieUtilisateur(3);
+                Elipse cercle = new Elipse(saisieUtilisateur(1), saisieUtilisateur(2), width, width);
+                this.imageParent.addForme(cercle);
+                break;
+            case 3 :
+                Trait trait = new Trait(saisieUtilisateur(1), saisieUtilisateur(2), saisieUtilisateur(1), saisieUtilisateur(2));
+                this.imageParent.addForme(trait);
+                break;
+            case 4 :
+                width = saisieUtilisateur(3);
+                Rectangle carre = new Rectangle(saisieUtilisateur(1), saisieUtilisateur(2), width, width);
+                this.imageParent.addForme(carre);
+                break;
+            case 5 :
+                Rectangle rectangle = new Rectangle(saisieUtilisateur(1), saisieUtilisateur(2), saisieUtilisateur(3), saisieUtilisateur(4));
+                this.imageParent.addForme(rectangle);
+                break;
+            case 6 :
+                Polygone polygone = new Polygone();
+                int saisiX = saisieUtilisateur(1);
+                int saisiY = saisieUtilisateur(2);
+                do {
+                    polygone.addPoint(saisiX,saisiY);
+                    saisiX = saisieUtilisateur(1);
+                    saisiY = saisieUtilisateur(2);
+                }while(saisiX>=0 && saisiY>=0);
+                this.imageParent.addForme(polygone);
+                break;
+            default:
+                System.out.println("Erreur");
+                break;
+        }
+    }
+    public int saisieUtilisateur(int choix){
+        boolean valid = false;
+        String input;
+        int x =0;
+        switch (choix){
+            case 1 : input = "x"; break;
+            case 2 : input = "y"; break;
+            case 3 : input = "la largeur"; break;
+            case 4 : input = "la hauteur"; break;
+            default: input = ""; break;
+        }
+        do{
+            try{
+                System.out.println("Entrer la valeur de "+ input +" (entrer R pour revenir en arrière)");
+                String saisie = this.sc.nextLine();
+                char carac = saisie.charAt(0);
+                if (carac == 'R'){
+                    return -1;
+                }
+                else {
+                    x= Integer.parseInt(saisie);
+                    valid = true;
+                }
+            }catch (NullPointerException e){
+                System.out.println("Erreur de saisie, un entier positif est attendu.");
+                valid = false;
+            }
+        }while(valid == false);
+        return x;
     }
 
     public void menuTransformation(Object obj, int index){
@@ -152,16 +237,15 @@ public class MenuConsole {
                 "3- La symétrie centrale\n" +
                 "4- La rotation de 90°\n" +
                 "5- La symétrie axiale\n" +
-                "6- Revenir en arrère");
-        Scanner sc = new Scanner(System.in);
-        int choix = Integer.parseInt(sc.nextLine());
+                "6- Revenir en arrère\n");
+        int choix = Integer.parseInt(this.sc.nextLine());
         float choixY = 0;
         float choixX = 0;
         switch(choix){
             case 1 :
                 do{
                     System.out.println("Entrer la valeur de X (entrer R pour revenir en arrière)");
-                    String saisie = sc.nextLine();
+                    String saisie = this.sc.nextLine();
                     char carac = saisie.charAt(0);
                     if (carac == 'R'){
                         menuTransformation(obj, index);
@@ -187,7 +271,7 @@ public class MenuConsole {
             case 2:
                 try{
                     System.out.println("Entrer la valeur de x (entrer R pour revenir en arrière)");
-                    String saisie = sc.nextLine();
+                    String saisie = this.sc.nextLine();
                     char carac = saisie.charAt(0);
                     if (carac == 'R'){
                         menuTransformation(obj, index);
@@ -201,7 +285,7 @@ public class MenuConsole {
                 }
                 try{
                     System.out.println("Entrer la valeur de y (entrer R pour revenir en arrière)");
-                    String saisie = sc.nextLine();
+                    String saisie = this.sc.nextLine();
                     char carac = saisie.charAt(0);
                     if (carac == 'R'){
                         menuTransformation(obj, index);
@@ -230,7 +314,7 @@ public class MenuConsole {
             case 3:
                 try{
                     System.out.println("Entrer la valeur de x (entrer R pour revenir en arrière)");
-                    String saisie = sc.nextLine();
+                    String saisie = this.sc.nextLine();
                     char carac = saisie.charAt(0);
                     if (carac == 'R'){
                         menuTransformation(obj, index);
@@ -244,7 +328,7 @@ public class MenuConsole {
                 }
                 try{
                     System.out.println("Entrer la valeur de y");
-                    choixY= Integer.parseInt(sc.nextLine());
+                    choixY= Integer.parseInt(this.sc.nextLine());
                 }catch (NullPointerException e){
                     System.out.println("Erreur de saisie");
                     menuTransformation(obj, index);
@@ -293,6 +377,8 @@ public class MenuConsole {
                     menuImage(this.imageParent, this.indexImageParent);
                 }
                 break;
+            case 6 :
+                menuDessin(this.dessinParent, this.indexDessinPrent);
             default:
                 System.out.println("Erreur de saisie");
                 menuTransformation(obj, index);
