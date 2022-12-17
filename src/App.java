@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App{
 
@@ -7,7 +8,7 @@ public class App{
     System.out.println("*** Bienvenue sur cette application de dessin ! ***\n");
 
     ArrayList <Dessin> dessins = new ArrayList<Dessin>();
-		Dessin pan = new Dessin();
+    Dessin pan = new Dessin();
 
     Image i = new Image();
     Image i2 = new Image();
@@ -47,9 +48,19 @@ public class App{
     //pan.addImage(i2);
 
     Dessin pan2 = pan.copie();
-    dessins.add(pan);
-    dessins.add(pan2);
-    MenuConsole menuConsole = new MenuConsole(dessins);
+
+    MenuConsole menuConsole;
+    System.out.println("1- commencer avec des données par défaut\n2- commencer de zéro\n");
+    Scanner sc = new Scanner(System.in);
+    int saisie = Integer.parseInt(sc.nextLine());
+    while (saisie!=1 && saisie!=2){
+      System.out.println("1- commencer avec des données par défaut \n 2- commencer de zéro\n");
+    }
+    if (saisie == 1){
+      dessins.add(pan);
+      dessins.add(pan2);
+    }
+    menuConsole = new MenuConsole(dessins);
     menuConsole.menuPrincipal();
 
     // view
