@@ -49,30 +49,30 @@ public class App{
 
     Dessin pan2 = pan.copie();
 
-    MenuConsole menuConsole;
-    System.out.println("1- commencer avec des données par défaut\n2- commencer de zéro\n");
-    Scanner sc = new Scanner(System.in);
-    int saisie = Integer.parseInt(sc.nextLine());
-    while (saisie!=1 && saisie!=2){
-      System.out.println("1- commencer avec des données par défaut \n 2- commencer de zéro\n");
-    }
-    if (saisie == 1){
-      dessins.add(pan);
-      dessins.add(pan2);
-    }
-    menuConsole = new MenuConsole(dessins);
-    menuConsole.menuPrincipal();
+    // MenuConsole menuConsole;
+    // System.out.println("1- commencer avec des données par défaut\n2- commencer de zéro\n");
+    // Scanner sc = new Scanner(System.in);
+    // int saisie = Integer.parseInt(sc.nextLine());
+    // while (saisie!=1 && saisie!=2){
+    //   System.out.println("1- commencer avec des données par défaut \n 2- commencer de zéro\n");
+    // }
+    // if (saisie == 1){
+    //   dessins.add(pan);
+    //   dessins.add(pan2);
+    // }
+    // menuConsole = new MenuConsole(dessins);
+    // menuConsole.menuPrincipal();
 
     // view
     Frame fen = new Frame(1200,1200);
 
-		/*fen.add(pan);
-        //fen.add(pan2);
-		fen.repaint();
-		fen.revalidate();
-    //fen.add(pan2);
-    fen.repaint();
-    fen.revalidate();*/
+    // fen.add(pan);
+    // fen.add(pan2);
+    // fen.repaint();
+		// fen.revalidate();
+    // fen.add(pan2);
+    // fen.repaint();
+    // fen.revalidate();
   }
 
 }
