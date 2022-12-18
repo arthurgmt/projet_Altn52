@@ -107,8 +107,27 @@ public class Frame extends JFrame{
 		}
 		this.menuForme.removeAll();
 		JButton addForme = new JButton("Ajouter une forme");
+		JLabel transformation = new JLabel("Transformation");
 		addForme.addActionListener(e-> addForme());
+
+		this.menuForme.add(transformation);
+		JComboBox<String> comboBoxTypeTransfo = new JComboBox<>();
+		comboBoxTypeTransfo.addItem("Homothétie");
+		comboBoxTypeTransfo.addItem("Translation");
+		comboBoxTypeTransfo.addItem("Symétrie centrale");
+		comboBoxTypeTransfo.addItem("Symétrie axiale");
+		comboBoxTypeTransfo.addItem("Rotation");
+		comboBoxTypeTransfo.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				transformation(comboBoxTypeTransfo.getSelectedItem().toString());
+			}
+		});
+		this.menuForme.add(comboBoxTypeTransfo);
+
 		this.menuForme.add(addForme);
+
+
 		setVisible(true);
 	}
 
@@ -200,6 +219,19 @@ public class Frame extends JFrame{
 		repaint();
 		revalidate();
 		setVisible(true);
+	}
+	public void transformation(String transfo){
+		if ( transfo == "Homothétie"){
+			this.imageParent.homothetie(2);
+		} else if (transfo == "Translation") {
+			this.imageParent.translation(5, 5);
+		}else if (transfo == "Symétrie centrale") {
+			this.imageParent.symetriecentrale(3,3);
+		}else if (transfo == "Symétrie axiale") {
+			this.imageParent.symetrieaxiale();
+		}else {
+			this.imageParent.rotation();
+		}
 	}
 
 }
