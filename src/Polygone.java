@@ -143,7 +143,7 @@ public class Polygone extends Forme implements Transformation {
 
     @Override
     public String toString() {
-        return "Rectangle = " +
+        return "Polygone = " +
                 "aire : " + aire +
                 " | perimetre : " + perimetre +
                 " | " + points + "\n";

@@ -168,6 +168,28 @@ public class Frame extends JFrame{
 				if(comboBoxTypeForme.getSelectedItem().toString() == "Ellipse"){
 					Ellipse ellipse = new Ellipse((int)(Math.random()*(200)+1),(int)(Math.random()*(200)+1), (int)(Math.random()*(20)+1),(int)(Math.random()*(20)+1));
 					imageParent.addForme(ellipse);
+				} else if(comboBoxTypeForme.getSelectedItem().toString() == "Cercle"){
+					int largeur = (int)(Math.random()*(20)+1);
+					Ellipse cercle = new Ellipse((int)(Math.random()*(200)+1),(int)(Math.random()*(200)+1), largeur,largeur);
+					imageParent.addForme(cercle);
+				} else if(comboBoxTypeForme.getSelectedItem().toString() == "Trait"){
+					Trait trait = new Trait((int)(Math.random()*(200)+1),(int)(Math.random()*(200)+1),(int)(Math.random()*(200)+1),(int)(Math.random()*(200)+1));
+					imageParent.addForme(trait);
+				} else if(comboBoxTypeForme.getSelectedItem().toString() == "Carré"){
+					int largeur = (int)(Math.random()*(20)+1);
+					Rectangle carre = new Rectangle((int)(Math.random()*(200)+1),(int)(Math.random()*(200)+1), largeur,largeur);
+					imageParent.addForme(carre);
+				} else if(comboBoxTypeForme.getSelectedItem().toString() == "Rectangle"){
+					Rectangle rectangle = new Rectangle((int)(Math.random()*(200)+1),(int)(Math.random()*(200)+1), (int)(Math.random()*(20)+1),(int)(Math.random()*(20)+1));
+					imageParent.addForme(rectangle);
+				} else if(comboBoxTypeForme.getSelectedItem().toString() == "Polygone"){
+					Polygone polygone = new Polygone();
+					polygone.addPoint((int)(Math.random()*(200)+1), (int)(Math.random()*(200)+1));
+					polygone.addPoint((int)(Math.random()*(200)+1), (int)(Math.random()*(200)+1));
+					polygone.addPoint((int)(Math.random()*(200)+1), (int)(Math.random()*(200)+1));
+					polygone.addPoint((int)(Math.random()*(200)+1), (int)(Math.random()*(200)+1));
+					polygone.addPoint((int)(Math.random()*(200)+1), (int)(Math.random()*(200)+1));
+					imageParent.addForme(polygone);
 				}
 			}
 		});
