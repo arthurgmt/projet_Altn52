@@ -49,7 +49,6 @@ public class Ellipse extends Forme {
     //récupère le premier point de la liste de points de l'ellipse et dessime grâce à swing
     @Override
     public void paint(Graphics2D g){
-        System.out.println("paint");
         Point p = this.getPoints().get(0);
         g.drawOval(p.x, p.y, this.width, this.height);  
     }

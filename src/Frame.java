@@ -20,6 +20,11 @@ public class Frame extends JFrame{
 	private JPanel panelDessin;
 	private Image inew;
 
+	public Frame(){
+		this.setVisible(true);
+		setPreferredSize(new Dimension(1000,1000));
+		pack();
+	}
 	public Frame(int width, int height, ArrayList<Dessin> dessins) {
 		this.dessins = dessins;
 		this.comboBoxDessin = new JComboBox<String>();
@@ -54,8 +59,6 @@ public class Frame extends JFrame{
 		JButton dessiner = new JButton("Dessiner");
 		zoneDessin.add(dessiner);
 		this.panelDessin = new JPanel();
-		JButton test = new JButton("tttttt");
-		this.panelDessin.add(test);
 
 		zoneDessin.add(this.panelDessin);
 		dessiner.addActionListener(e-> this.dessiner());
@@ -90,10 +93,14 @@ public class Frame extends JFrame{
 		this.dessinParent =  dessins.get(index);
 		this.indexDessinPrent = index;
 		this.menuImage.removeAll();
-
+		JButton cloneDessin = new JButton("Copie dessin");
 		JButton addImage = new JButton("Ajouter une image");
 		addImage.addActionListener(e-> addImage());
+		cloneDessin.addActionListener(e->{
+			dessins.add(this.dessinParent.copie());
+		});
 		this.menuImage.add(addImage);
+		this.menuImage.add(cloneDessin);
 		setVisible(true);
 	}
 	public void menuForme(int index){
@@ -166,7 +173,7 @@ public class Frame extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(comboBoxTypeForme.getSelectedItem().toString() == "Ellipse"){
-					Ellipse ellipse = new Ellipse((int)(Math.random()*(200)+1),(int)(Math.random()*(200)+1), (int)(Math.random()*(20)+1),(int)(Math.random()*(20)+1));
+					Ellipse ellipse = new Ellipse((int)(Math.random()*(50)+1),(int)(Math.random()*(50)+1), (int)(Math.random()*(20)+1),(int)(Math.random()*(20)+1));
 					imageParent.addForme(ellipse);
 				} else if(comboBoxTypeForme.getSelectedItem().toString() == "Cercle"){
 					int largeur = (int)(Math.random()*(20)+1);
@@ -230,18 +237,13 @@ public class Frame extends JFrame{
 
 
 	public void dessiner(){
-		this.panelDessin.removeAll();
-
-		for(Dessin dessin : this.dessins){
-			System.out.println(dessin);
-			this.panelDessin.add(dessin);
+		Frame newFrame = new Frame();
+		for(Dessin dessin : this.dessins) {
+			newFrame.add(dessin);
 		}
-		this.panelDessin.repaint();
-		this.panelDessin.revalidate();
-		repaint();
-		revalidate();
-		setVisible(true);
+		newFrame.setVisible(true);
 	}
+
 	public void transformation(String transfo){
 		if ( transfo == "Homothétie"){
 			this.imageParent.homothetie(2);
