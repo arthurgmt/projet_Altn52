@@ -50,7 +50,7 @@ public class MenuConsole {
                 menuPrincipal();
                 break;
             case 3:
-                System.out.println("TADA");
+                Frame frame = new Frame(1200,1200, dessins);
                 break;
             case 4 :
                 System.exit(1);
@@ -162,12 +162,12 @@ public class MenuConsole {
         int width;
         switch (index){
             case 1 :
-                Elipse elipse = new Elipse(saisieUtilisateur(1), saisieUtilisateur(2), saisieUtilisateur(3), saisieUtilisateur(4));
+                Ellipse elipse = new Ellipse(saisieUtilisateur(1), saisieUtilisateur(2), saisieUtilisateur(3), saisieUtilisateur(4));
                 this.imageParent.addForme(elipse);
                 break;
             case 2 :
                 width = saisieUtilisateur(3);
-                Elipse cercle = new Elipse(saisieUtilisateur(1), saisieUtilisateur(2), width, width);
+                Ellipse cercle = new Ellipse(saisieUtilisateur(1), saisieUtilisateur(2), width, width);
                 this.imageParent.addForme(cercle);
                 break;
             case 3 :
